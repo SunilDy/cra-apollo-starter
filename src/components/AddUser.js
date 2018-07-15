@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
-import { addUserMutation } from '../queries/query';
+import { addUserMutation,allUsers } from '../queries/query';
 
 
 class AddUser extends Component {
@@ -30,7 +30,8 @@ class AddUser extends Component {
                                 variables: {
                                     name: this.state.name,
                                     password: this.state.password
-                                }
+                                },
+                                refetchQueries: [{query:allUsers}]
                             })
                         }}>
                             <input
