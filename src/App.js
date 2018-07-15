@@ -6,6 +6,11 @@ import { Query } from 'react-apollo'
 import {user} from './queries/query'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     console.log(this.props)
     return (
