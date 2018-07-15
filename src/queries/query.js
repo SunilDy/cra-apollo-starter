@@ -9,6 +9,23 @@ const user = gql`
     }
 `;
 
+const allUsers = gql`
+    query {
+        users {
+            name
+        }
+    }
+`;
+
+const addUserMutation = gql`
+    mutation user($name:String!,$password:String!) {
+        addUser(name:$name, password:$password) {
+            name
+            password
+        }
+    }
+`;
+
 export {
-    user
+    user,addUserMutation,allUsers
 }
